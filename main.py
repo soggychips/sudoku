@@ -3,13 +3,21 @@ from copy import deepcopy
 
 
 def print_grid(grid):
-    s = ""
+    s = " {}".format("_" * 31)
+    s += "\n"
     for i in range(9):
         for j in range(9):
+            if j == 0:
+                s += "|"
             num = grid[i][j]
-            s += "{}{} ".format(" " if (num <= 9 or type(num)
-                                        == str) else "", num)
+            s += " {} ".format(num)
+            if (j + 1) % 3 == 0:
+                s += "| "
         s += '\n'
+        if i == 8:
+            s += " {}".format("-" * 31)
+        elif (i + 1) % 3 == 0:
+            s += "|---------+----------+----------|\n"
     print(s)
 
 
