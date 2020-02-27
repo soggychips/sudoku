@@ -1,26 +1,6 @@
 from random import seed, shuffle, choice
 from copy import deepcopy
 
-'''
-A brute force algorithm visits the empty cells in some order, filling in digits sequentially, or backtracking when the number is found to be not valid.
-Briefly, a program would solve a puzzle by placing the digit "1" in the first cell and checking if it is allowed to be there. 
-If there are no violations (checking row, column, and box constraints) then the algorithm advances to the next cell and places a "1" in that cell. 
-When checking for violations, if it is discovered that the "1" is not allowed, the value is advanced to "2". 
-If a cell is discovered where none of the 9 digits is allowed, then the algorithm leaves that cell blank and moves back to the previous cell. 
-The value in that cell is then incremented by one. This is repeated until the allowed value in the last (81st) cell is discovered.
-'''
-
-"""
-Find row, col of an unassigned cell
-If there is none, return true
-For digits from 1 to 9
-  a) If there is no conflict for digit at row, col
-      assign digit to row, col and recursively try fill in rest of grid
-  b) If recursion successful, return true
-  c) Else, remove digit and try another
-If all digits have been tried and nothing worked, return false
-  """
-
 
 def print_grid(grid):
     s = ""
